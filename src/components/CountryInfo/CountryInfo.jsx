@@ -17,27 +17,29 @@ export const CountryInfo = ({
   languages = [],
   population,
 }) => {
+  console.log(country);
   return (
-    <h2>CountryInfo</h2>
-    // <CountryWrapper >
-    //   <Flag>
-    //     <Image />
-    //   </Flag>
-    //   <CountryDescription>
-    //     <CountryCapital>
-    //       Capital: <Accent></Accent>
-    //     </CountryCapital>
+    <CountryWrapper key={id}>
+      <Flag>
+        <Image src={flag} />
+      </Flag>
+      <CountryDescription>
+        <CountryCapital>
+          Capital: <Accent>{capital}</Accent>
+        </CountryCapital>
 
-    //     <CountryTitle></CountryTitle>
+        <CountryTitle>
+          {country === 'Russian Federation' ? 'MORDOR' : country}
+        </CountryTitle>
 
-    //     <CountryDetail>
-    //       Population: <Accent></Accent>
-    //     </CountryDetail>
+        <CountryDetail>
+          Population: <Accent>{population}</Accent>
+        </CountryDetail>
 
-    //     <CountryDetail>
-    //       Languages: <Accent></Accent>
-    //     </CountryDetail>
-    //   </CountryDescription>
-    // </CountryWrapper>
+        <CountryDetail>
+          Languages: <Accent>{languages.join(', ')}</Accent>
+        </CountryDetail>
+      </CountryDescription>
+    </CountryWrapper>
   );
 };
